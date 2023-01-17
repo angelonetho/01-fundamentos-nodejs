@@ -14,7 +14,7 @@ class OneToHundreadStream extends Readable {
 
                 this.push(buf)
             }
-        }, 1000)
+        }, 5)
     }
 }
 
@@ -22,4 +22,8 @@ fetch('http://localhost:8081', {
     method: 'POST',
     body: new OneToHundreadStream(),
     duplex: 'half'
+}).then(response => {
+    return response.text()
+}).then(data => {
+    console.log(data)
 })
