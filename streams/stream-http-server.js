@@ -24,9 +24,6 @@ const server = http.createServer( async (req, res) => {
 
     return res.end(fullStreamContent)
 
-    // return req
-    //     .pipe(new InverseNumberStreeam())
-    //     .pipe(res)
 })
 
 server.listen(8081)
